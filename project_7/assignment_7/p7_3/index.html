@@ -1,0 +1,102 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Project 7 - Part 3</title>
+  <link href="./js/jquery-ui.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="./js/jquery-ui.min.js"></script>
+  <script>
+  "use strict";
+  $(function() {
+		$('#tabbedPanel').tabs(); //This creates the two tabs at the top of the table.
+		//This if statement says if the bmi contains input id's for feet, inches, and weight to calculate those fields based on the Imperial measurement system
+		$("#submitme").click(function () {
+			if($("#feet").val() && $("#inches").val() && $("#weight").val()){ 
+				var height = Number($("#inches").val()) * 12 + Number($("#feet").val()); //This code sets the variable height to its calculation of input id's feet and inches and their respective values.
+				var weight = $("#weight").val(); //This sets the variable weight to its weight value entered.
+				$("#bmi").val((703 * weight) / Math.pow(height,2)); //This calculates the formula based on imperial measurement system.
+		}
+		});
+		//This if statement says if the bmi contains input id's for height and weight and calculates those based on the Metric measurement system.
+		$("#submitme2").click(function () {
+			if($("#height").val() && $("#weight").val()){
+				var height = Number($("#height").val()); //This sets height 
+				var weight = $("#weight").val();
+				$("#bmi2").val(weight / Math.pow(height,2));
+		}
+		});
+   	
+	 }); // end ready
+</script>
+</head>
+<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+<style type="text/css"> 
+body {
+	background-color: #3e966a;
+	color: white;
+}
+	
+	#tabbedPanel{
+	background-color: #83a913;
+	border: 3px solid white;
+	box-shadow: 10px 10px 5px #545454;
+	height: 400px;
+	border-radius: 5px 5px 5px 5px;
+}
+  p {color:white; }
+  
+  #imperial{color:white; }
+  
+  #metric{color:white; }
+  
+  label { margin-left: 30px;}
+  
+  #submitme { margin-left: 3px;
+              display: block; }
+			  
+  a{color:white;}
+</style>
+<body>
+  <a href="../home.html">Home</a><br /><br />
+  <img src="images/logo.jpg" /><br />
+  <h1><i class="fa fa-thumbs-o-up fa-lg"></i> Welcome to Sftwear Consulting!!!</h1>
+
+  <h2><i class="fa fa-plus-square fa-lg"></i> Here is the body mass index calculator! Let's hope that everyone is at a healthy weight!!</h2>
+<form id="infoform">
+<div id="tabbedPanel">
+	<ul>
+		<li><a href="#imperial">Imperial</a></li> 
+		<li><a href="#metric">Metric</a></li>
+	</ul>
+	<div id="imperial">  
+		<!-- HTML for panel 1 goes in here --> 
+		<p>Enter your height and inches, then your weight in pounds</p><br /><br />
+		Feet: <input type="number" name="feet" id="feet" title="Please enter your height in feet." />
+		Inches: <input type="number" name="inches" id="inches" title="Please enter your height in inches." /><br /><br />
+		Weight: <input type="text" name="weight" id="weight" title="Please enter your weight in pounds." /> lbs<br /><br />
+		<input type='button' value='Compute BMI' name="submit" id='submitme' /><br /><br />
+		Your BMI: <input id="bmi" type="number" min="1" max="200" />
+	</div>  
+	<div id="metric">
+		<!-- HTML for panel 2 goes in here -->
+		<p>Enter your height in centimeters and your weight in kilograms.</p><br /><br />
+			Height: <input type="number" name="height" id="height" title="Please enter your height in centimeters." /><br /><br />
+			Weight: <input type="text" name="weight" id="weight" title="Please enter your weight in kilograms." /><br /><br />
+			<input type='button' value='Compute BMI' name="submit" id='submitme2' /><br /><br />
+			Your BMI: <input id="bmi2" min="1" max="200" />
+	</div>
+
+</div>
+ </form>
+<!--div id="content">
+ 
+ 
+
+ </div-->
+	<br /><br /> 
+  <footer>Created by Gregory Haynes</footer>
+</body>
+</html>

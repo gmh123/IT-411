@@ -1,0 +1,44 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <link href="stylesheets/IT411b.css" rel="stylesheet">
+  <title>Index Page for Project 2 - Part 3</title>
+  
+  <style type="text/css"> 
+body{
+ 
+	 background-color: #e5eaec;
+
+
+	}
+
+</style>
+  
+</head>
+
+
+<body>
+<a href="../home.html">Home</a><br />
+<img src="images/logo.jpg" /><br />
+<h1>IT 411 Project 3 Homepage</h1>
+
+<h1>This is Sftwear Consulting!!</h1>
+
+<hr />
+<script>
+    var products = [];
+    var product = Number(prompt("Please enter a product or -1 to stop entering scores"));
+    while (product != -1) {
+      products.push(product);
+      product = Number(prompt("Please enter a product or -1 to stop entering scores"));
+    }
+    var total_product = 1;
+    for (var index = 0; index < products.length; index++) {
+      total_product *= products[index];
+    }
+    var average = total_product;
+    document.write("<h1>Your favorite numbers are " + products.join(", ") + "</h1>");
+    document.write("<h1>The average that will be printed on your t-shirt is " + average + ".</h1>");
+  </script> 
+</body>
+</html>

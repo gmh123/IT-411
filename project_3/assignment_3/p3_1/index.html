@@ -1,0 +1,65 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Project 3 - Part 1</title>
+  <link href="stylesheets/standard.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.js"></script>
+  <script>
+    $(document).ready(function() {
+	  
+	  //this code changes the text to red when the user hovers
+	 //the first paragraph.
+      $(".odd").mouseenter(function() {
+        $(".odd").css("color", "red");
+      });
+
+      $(".odd").mouseleave(function() {
+        $(".odd").css("color", "black");
+      });
+	  
+	   //this code switches the background color of this page back
+	  // and forth to light blue and the default background color  
+	 //when the user clicks on the second paragraph.
+	  $(".even").mouseup(function() {
+        $(".even").css("background-color", "#f2fbaa");
+      });
+
+      $(".even").mousedown(function() {
+        $(".even").css("background-color", "#9d68d6");
+      });
+
+    });
+  </script>
+</head>
+<style type="text/css"> 
+body{
+ 
+	 background-color: #f2fbaa;
+
+
+	}
+
+</style>
+<body>
+  <a href="../home.html">Home</a><br />
+  <img src="images/logo.jpg" /><br />
+  <h1>IT 411 Project 2 Homepage</h1>
+
+<h1>This is Sftwear Consulting!!</h1>
+<hr /> 
+
+  <div id="introduction">
+    <p id="paragraph1" class="odd">
+    My favorite resturant is Chili's for a variety of reasons. I think they have the best grilled food att
+	Chili's and you can get a lot of their fantastic grilled food for really good prices as well. For example, you can 
+	have a mix and match deal for about $19.00 - $20.00 or so.
+    </p>
+	<p id="paragraph1" class="even">
+    My favorite meal to get at Chili's are their chicken quesadillas with fries. I love getting that meal for a variety of reasons. 
+	The sauce I get for my quesadillas are fantastic. I also believe that Chili's has the best Mexican food as well.
+    </p>
+    
+  <footer>Created by Gregory Haynes</footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Project 6 - Part 2</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.js"></script>
+  <script>
+  "use strict";
+  $(document).ready(function() {
+
+      $(".image").css({opacity: 1.0});
+
+      $(".image").mouseenter(function() {
+        $(this).stop().animate({opacity: 0.5}, 2000);
+      });
+
+      $(".image").mouseleave(function() {
+        $(this).stop().animate({opacity: 1.0}, 2000);
+      });
+
+	  
+	  
+	  $(".image").click(function() {
+        // Get a reference to the old large image.
+        var old_large_image = $("#biggerimage img");
+        // Create an image element and have large_image refer to it.
+        var large_image = $("<img src=\"" + this.src + "\">");
+        // Set the display attribute of the new large image so
+        // that it is hidden.
+        large_image.hide();
+        // Set the width and height attributes of the new large
+        // image so that they're twice the size of the original
+        // image.
+        large_image.attr("width", this.width*2);
+        large_image.attr("height", this.height*2);
+        // Start fading out the old large image.
+        old_large_image.fadeOut(
+          1000,
+          // When the old large image has completely faded,
+          // remove it from the DOM.
+          function() { // callback function
+            $(this).remove();
+          }
+        );
+        // Place the new large image into the DOM as a
+        // child of the div with id "biggerimage".
+        $("#biggerimage").append(large_image);
+        // Start fading in the new large image.
+        large_image.fadeIn(1000);
+      });
+
+      $("#gallery img:last").click();
+
+    });
+</script>
+</head>
+<style type="text/css"> 
+body{background-color: #f2fbaa;}
+</style>
+<body>
+  <a href="../home.html">Home</a><br />
+  <img src="images/logo.jpg" /><br />
+  <h1>IT 411 Project 6 - Part 2</h1>
+
+<h1>This is Sftwear Consulting!!</h1>
+<hr /> 
+ <div id="content"> </div>
+<div id="gallery">
+    <h3>Gallery of animals</h3>
+    <img class="image" src="images/giraffe.jpg" height="200px" width="250px">
+    <img class="image" src="images/tiger.jpg" height="200px" width="250px">
+    <img class="image" src="images/monkey.jpg" height="200px" width="250px">
+    <!--img class="image" src="images/lion.jpg" height="200px" width="250px"-->
+	<img class="image" src="images/bear.jpg" height="200px" width="250px">
+    <img class="image" src="images/panda.jpg" height="200px" width="250px">
+  </div>
+  <div><h3>My biggest animal</h3></div> 
+  <div id="biggerimage"></div>
+  <footer>Created by Gregory Haynes</footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Project 6 - Part 1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.js"></script>
+  <script>
+  "use strict";
+  $(document).ready(function() { //begins document.ready
+
+	var clicked = false;
+	
+	$(document).mousemove(function(e) {
+		$("#myImage").offset({top: e.clientY, left: e.clientX}); //moves the image around the top and left based on its position.
+		$('#content').html("clientY="+e.clientY + "<br />" +" clientX="+e.clientX); //displays the position of the image.
+	
+	});
+	
+	
+	
+	  $(document).click( function(e) {
+		if (clicked) {
+			clicked = false;// if the image is clicked, it sets the clicked variable to false.
+			$("#clickstatus").text("Clicked was " + clicked);//displays the status of clicked variable.
+			$(document).off("mousemove"); //turns off the mousemove event.
+			
+		} else {
+			clicked = true;// if the variable clicked is true, it sets the clicked variable to true.
+			$("#clickstatus").text("Clicked was " + clicked); //displays the status of the clicked variable.
+			$(document).on("mousemove", function(e) { //re-activates the mousemove function.
+				$("#myImage").offset({top: e.clientY, left: e.clientX});
+				$('#content').html("clientY="+e.clientY + "<br />" +" clientX="+e.clientX);
+			
+			
+		});
+		
+		}
+		
+	  });
+	
+		
+
+  }); // end ready
+</script>
+</head>
+<style type="text/css"> 
+body{
+ 
+	 background-color: #f2fbaa;
+
+
+	}
+</style>
+<body>
+  <a href="../home.html">Home</a><br />
+  <img src="images/logo.jpg" /><br />
+  <h1>IT 411 Project 6 Homepage - Part 1</h1>
+
+<h1>This is Sftwear Consulting!!</h1>
+<hr /> 
+ <div id="content"> </div>
+ <div id="clickstatus"> </div>
+    <img id="myImage" class="image" src="images/frog.jpg" />   
+  <footer>Created by Gregory Haynes</footer>
+</body>
+</html>

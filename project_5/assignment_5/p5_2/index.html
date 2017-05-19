@@ -1,0 +1,60 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Project 5 - Part 1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.js"></script>
+  <script>
+  "use strict";
+  $(document).ready(function() { //Starts the jQuery function
+	$(".image").mouseenter(function() {
+        $(this).addClass("width"); //This code adds the image.width class in order to make my 
+								  //cars images bigger
+      });
+
+      $(".image").mouseleave(function() {
+        $(this).removeClass("width");// This code returns them to the same size.
+      });
+  
+
+  }); // end ready
+</script>
+</head>
+<style type="text/css"> 
+body{
+ 
+	 background-color: #f2fbaa;
+
+
+	}
+.image {
+      width:250px;
+	  height:200px;
+      transition: width 3s ease, height 3s ease;
+      
+    }
+
+    .image.width {
+      width:500px;
+	  height: 500px;
+    }
+</style>
+<body>
+  <a href="../home.html">Home</a><br />
+  <img src="images/logo.jpg" /><br />
+  <h1>IT 411 Project 5  - Part 2 Homepage</h1>
+
+<h1>This is Sftwear Consulting!!</h1>
+<hr /> 
+ <div id="content">
+  </div>
+  <div id="gallery">
+    <h3>My lovely cars!!!</h3>
+    <img class="image" src="images/car1.png" height="200px" width="250px">
+    <img class="image" src="images/car2.png" height="200px" width="250px">
+    <img class="image" src="images/car3.png" height="200px" width="250px">
+    <img class="image" src="images/car4.jpg" height="200px" width="250px">
+  </div>   
+  <footer>Created by Gregory Haynes</footer>
+</body>
+</html>

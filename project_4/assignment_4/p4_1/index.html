@@ -1,0 +1,83 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Project 4 - Part 1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.js"></script>
+  <script>
+  "use strict";
+  $(document).ready(function() {
+	$("#toggleHighlight").click(function() {
+		if ($(this).text() == "Add Highlight") {
+		
+			$('span.pp').each(function() {
+				//This changes the background color of the span text to purple if 
+				//the jQuery program detects the 'Add Highlight' text on the button.
+				$('.pp').css("background-color", "#9d68d6");  
+				//$(this).addClass('.paragraph');
+				//$(this).before(quote);
+				$("#toggleHighlight").text("Remove Highlight");
+			}); // end each		
+		}
+		else
+		{
+			//This changes the background color back to the default color 
+			//of the background.
+			$('.pp').css("background-color", "#f2fbaa");  // remove the pull quotes
+			$("#toggleHighlight").text("Add Highlight");
+					
+		}
+		
+		
+	
+	});
+  
+
+  }); // end ready
+</script>
+</head>
+<style type="text/css"> 
+body{
+ 
+	 background-color: #f2fbaa;
+
+
+	}
+
+	/*.paragraph {
+					background-color: rgb(195,151,51);
+					
+		}*/
+</style>
+<body>
+  <a href="../home.html">Home</a><br />
+  <img src="images/logo.jpg" /><br />
+  <h1>IT 411 Project 2 Homepage</h1>
+
+<h1>This is Sftwear Consulting!!</h1>
+<hr /> 
+  <div id="header"> 
+	<button id="toggleHighlight">Add Highlight</button>
+  
+  
+  </div>
+
+  <div id="content">
+    <p>
+   My favorite kind of music is hip hop, indie rock, and r&b. Each of those genres has a distinctive style as well 
+   as artists who create those styles. <span class="pp">The thing about music is that it defines you as a person.</span>
+    </p>
+	<p>
+    <span class="pp">My favorite rock bands are the Black Keys, Red Hot Chili Peppers, Bloc Party, We Are Scientists, the Yeah Yeah Yeahs, 
+	and Best Coast.</span> I like the Black Keys because they have a combination of blues, rock, and soul. Bloc Party, and the Yeah Yeah Yeahs, 
+	have distinctive indie rock sounds that no one has ever heard before. 
+    </p>
+	<p>
+    My favorite hip hop artists are Kendrick Lamar, J.Cole, Lupe Fiasco, Childish Gambino, Mos Def, and Talib Kweli.
+	<span class="pp">I like all of those rappers because they're not just mainstream rappers, I consider them to be poets.</span>
+    </p>
+</div>
+    
+  <footer>Created by Gregory Haynes</footer>
+</body>
+</html>

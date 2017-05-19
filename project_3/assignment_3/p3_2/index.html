@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset=utf-8>
+	<title>Index Page for Project 3 - Part 2</title>
+	
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script> 
+ $(document).ready(function() {
+   //This is where I've defined my array!!
+	var words = ["This is awesome!!", 
+				 "You are awesome!!", 
+				 "I want my mommy!!", 
+				 "I can do the Nae-Nae!!", 
+				 "Watch me whip!!", 
+				 "Watch me spin!!", 
+				 "I can stand on one toe!!", 
+				 "I am made of rubber!!", 
+				 "I call myself a cool nerd!!", 
+				 "I whip my hair back and forth!!",
+				 "Wobble for me!!"];
+				 
+		//var messages_number = String(prompt("Please enter your favorite number"));
+
+     
+      //document.write("You're shirt will say "+ messages[messages_in_list] +"<br>");
+	  //This is the function I've used to create my output.
+      function display_messages() {
+	  //var messages_in_list = (words-1) % 10;
+      var messages = $("input#messages").val();
+      var displayWords = messages % 10;
+      $("div#output").html("<h2>" + "You're shirt will say " + words[displayWords]  + "</h2>");
+    }
+
+	  
+	  //This code is used to call the keyup function.
+      $("input#messages").keyup(function() {
+        display_messages();
+	  });
+    });
+
+	  
+
+</script>	
+</head> 
+
+<style type="text/css"> 
+body{
+ 
+	 background-color: #f2fbaa;
+
+
+	}
+
+</style>
+
+
+<body>
+<a href="../home.html">Home</a><br />
+<img src="images/logo.jpg" /><br />
+<h1>IT 411 Project 2 - Part 2</h1>
+
+<h1>This is Sftwear Consulting!!</h1>
+<hr /> 
+
+<p>Enter the numbers to see what your shirt will say!</p>
+  <input type="text" id="messages">
+  <div id="output"></div>
+</body>
+</html>

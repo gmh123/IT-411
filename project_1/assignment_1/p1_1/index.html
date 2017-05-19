@@ -1,0 +1,55 @@
+<!doctype html> 
+<html>
+<head>
+<meta charset=utf-8>
+
+	<title>Assignment 1 - Part 1</title>
+	
+</head>
+<style type="text/css"> 
+body{ 
+
+	background-color: #e5eaec;
+
+
+	}
+
+</style>
+<body>
+<a href="../home.html">Home</a><br />
+<img src="images/logo.jpg" />
+<h1>IT 411 Assignment</h1>
+
+<h1>This page will state your age on your t-shirt</h1>
+<hr /> 
+	<script>
+	function getFullYear(){
+	
+		var dateInput = prompt("Please enter your birthday", "");
+	
+		//alert(dateInput);
+	
+		var thisday = new Date();
+	
+		//alert(today);
+	
+		var theBirthDate = new Date(dateInput);
+	
+		var outputYear = "You are " + (thisday.getFullYear() - theBirthDate.getFullYear()) + " years old.";
+	
+		document.write(outputYear);
+	}
+		getFullYear();
+
+
+	</script>
+
+
+</body> 
+<body>
+<p> This is your age on your t-shirt!</p>
+<p> 
+	Created by Gregory Haynes.
+</p>
+</body>
+</html>

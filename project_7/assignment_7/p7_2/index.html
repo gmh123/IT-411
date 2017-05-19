@@ -1,0 +1,109 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Project 7 - Part 2</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+  <script>
+  "use strict";
+  $(function() { //starts the jQuery document
+			//In the submit function, this information outputs to the div id of results when the user has entered in the correct information. 
+		   $("#infoform").submit(function(e) {
+				$(".results").html("<h1>Your Poster Information</h1>" 
+				+ "Your Name: " 
+				+ $("#myname").val()
+				+ "<br /><br />"
+				+ "Today's Date: "
+				+ $("#date").val()
+				+ "<br /><br />" 
+				+ "Email: " 
+				+ $("#email").val()
+				+ "<br /><br />"
+				+  "URL: " 
+				+ $("#url").val()
+				+ "<br /><br />"
+				+ "Age: "
+				+ $("#age").val());
+				e.preventDefault(e);//This method prevents the form from submitting
+			});
+		$("#infoform").validate(); //This validates the id infoform based on the jQuery validator plugin.
+	 }); //ends the jQuery document
+</script>
+</head>
+<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+<style type="text/css"> 
+body {
+	background-color: #3e966a;
+	color: white;
+}
+	
+  #content { 
+	border: 3px solid white;
+	box-shadow: 10px 10px 5px #545454;
+	height: 300px;
+	border-radius: 5px 5px 5px 5px;
+	height: 590px;
+	margin-top: 30px;
+	background-color: #83a913;
+  
+  }
+	
+	h2{margin-left: 30px;}
+  label { margin-left: 30px;}
+  
+  .results{
+	margin-top: 10px; 
+	text-align:center;
+	}
+  
+  #submitme { margin-left: 30px;
+              display: block; }
+  a{color: white;}
+</style>
+<body>
+  <a href="../home.html">Home</a><br /><br />
+  <img src="images/logo.jpg" /><br />
+  <h1><i class="fa fa-heart-o fa-lg"></i> Welcome To Sftwear Consulting!!!
+  <br /><br /> <i class="fa fa-thumbs-o-up fa-lg"></i> You're Going to Get an Interactive Poster!!!
+  <br /><br /> <i class="fa fa-child fa-lg"></i> Hooray!!!</h1>
+<div id="content">
+ <form id="infoform">
+ <h2>Enter the information below for your own interactive poster!</h2>
+  <label> 
+	Enter Your Name: <input type="text" name="myname" id="myname" class="required" title="Please enter your name.">
+  </label>
+  <br /><br />
+  <label> 
+	Enter Today's Date: <input type="date"  name="date" id="date" class="required" title="Please enter a valid date."/>
+  </label>
+  <br /><br />
+  <label> 
+	Enter Your Email: <input type="email" name="email"  id="email" class="required" title="Please enter your email."/>
+  </label>
+   <br /><br />
+   <label> 
+	Enter Your Website: <input type="url" name="url"  id="url" class="required" title="Please enter your website link." />
+  </label>
+   <br /><br />
+   <label> 
+	Enter Your Age: <input type="number" name="age"  id="age" class="required" title="Don't forget to enter your age!" />
+  </label>
+  <br /><br />
+	<input type='submit' value='Submit' name="submit" id='submitme' />
+ 
+ </form>
+ <div class="results">  
+	<h1>Your Poster Information</h1>
+	Your Name:<br /><br />
+	Today's Date:<br /><br />
+	Email:<br /><br />
+	Website:<br /><br />
+	Age:<br /><br />
+ </div>
+ </div>
+ 
+	<br /><br /> 
+  <footer>Created by Gregory Haynes</footer>
+</body>
+</html>

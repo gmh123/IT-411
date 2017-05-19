@@ -1,0 +1,136 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Project 7 - Part 1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <!--script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.js"></script-->
+  <script>
+  "use strict";
+  $(function() {
+		
+		$('#getinput').focus(function() {
+			var field = $(this);
+			//Empties the value in the field when the user clicks in the field.			
+			if (field.val()==field.prop('defaultValue')) { 
+				field.val(''); 
+			} 
+		}); 
+		
+		$('#getinput').blur(function() {
+			var field = $(this);
+			//Restores the value in the field when the user clicks away from the field. 			
+			if (field.val()=='') { 
+				field.val(field.prop('defaultValue'));				
+			} 
+		});
+
+		$('#getinput1').focus(function() {
+			var field = $(this);
+			//Empties the value in the field when the user clicks in the field. 			
+			if (field.val()==field.prop('defaultValue')) { 
+				field.val(''); 
+			} 
+		}); 
+		
+		$('#getinput1').blur(function() {
+			var field = $(this);
+			//Restores the value in the field when the user clicks away from the field. 			
+			if (field.val()=='') { 
+				field.val(field.prop('defaultValue'));				
+			} 
+		});
+		
+		$('#getinput2').focus(function() {
+			var field = $(this);
+			//Empties the value in the field when the user clicks in the field. 			
+			if (field.val()==field.prop('defaultValue')) { 
+				field.val(''); 
+			} 
+		}); 
+		
+		$('#getinput2').blur(function() {
+			var field = $(this);
+			//Restores the value in the field when the user clicks away from the field.			
+			if (field.val()=='') { 
+				field.val(field.prop('defaultValue'));				
+			} 
+		});
+		
+		//This if statement states input id's are equal to empty strings or default values, to create an error message. If input fields are filled in, create an alert box and navigate to the next page.
+		$("#signup").submit(function() {
+			if ($("#getinput").val() == '' || $("#getinput").val() == $("#getinput").prop('defaultValue') 
+			|| $("#getinput1").val() == '' || $("#getinput1").val() == $("#getinput1").prop('defaultValue')	
+			|| $("#getinput2").val() == '' || $("#getinput2").val() == $("#getinput2").prop('defaultValue')) {
+				alert("Please enter your information to determine what your favorite food is.");
+				// since there is invalid input returning false will keep us from navigating to the new form 
+				return false;
+			}
+			else {
+				alert($("#getinput").val() + " " + $("#getinput1").val() + " likes " + $("#getinput2").val() + ".");
+				
+			}
+		});	
+		
+	 }); // end ready
+</script>
+</head>
+<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+<style type="text/css"> 
+body {
+	background-color: #3e966a;
+	color: white;
+}
+	
+  #content { 
+	border: 3px solid white;
+	box-shadow: 10px 10px 5px #545454;
+	height: 300px;
+	border-radius: 5px 5px 5px 5px;
+	margin-top: 30px;
+	background-color: #83a913;
+  }
+	
+	
+	h3{margin-left: 30px;}
+                             }
+  
+  label { margin-left: 30px;}
+  
+  #submitme { margin-left: 30px;
+              display: block; }
+			  
+  i {color: white;}
+  
+  a{color: white;}
+</style>
+<body>
+  <a href="../home.html">Home</a><br /><br />
+  <img src="images/logo.jpg" /><br />
+  <h1><i class="fa fa-thumbs-o-up fa-lg"></i> Welcome to Sftwear Consulting!!</h1>
+  <h2><i class="fa fa-heart fa-lg"></i> What's Your Favorite Food?!?! </h2>
+  
+<div id="content">
+ <form id="signup" action="page.html">
+ <h3>Enter the information below and a message will appear saying your first and last name 
+	and what kind of food you like.</h3><br />
+  <label> 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Name: <input type="text"  value="First Name" name="getinput" id="getinput" />
+  </label>
+  <br /><br />
+  <label> 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last Name: <input type="text" value="Last Name"  name="getinput1" id="getinput1" />
+  </label>
+  <br /><br />
+  <label> 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Favorite Food: <input type="text"  value="Favorite Food" name="getinput2"  id="getinput2" />
+  </label>
+   <br /><br />
+   <input type='submit' value='Submit' name="submit" id='submitme' />
+	
+ 
+ </form>
+ </div>
+	<br /><br /> 
+  <footer>Created by Gregory Haynes</footer>
+</body>
+</html>

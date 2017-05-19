@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset=utf-8>
+	<title>Index Page for Project 4 - Part 3</title>
+	
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+<script>
+"use strict";
+$(function() {
+	//var firstChar = text.charAt(0);
+	var countClicks = 1; //This sets the clickCounts counter variable to 0.
+	//var countClicksReset = 0;
+	//var displayClicks;
+	//displayButton = 0;
+		  
+		  $(document).click(function(e) {
+			
+			 //console.log("Key presses");
+			//$("#output").append("The key pressed was " + e.char + "<br />");
+			countClicks++;//This line increments the variable countClicks.
+			$("#receiver").html(countClicks++ + " " + "clicks");//With the incremented variable, it displays the number of clicks a user performs.
+			$("#message1").append("Click Locations: " + e.clientX + " , " + e.clientY  + "<br />");//This 
+			 
+		  });
+		  
+		  $("#myBtn").click(function(e) {
+			e.stopPropagation();
+			$("myBtn").empty();//This is where I clear my list.
+			countClicks = 1;  //This is where I reset my variable to 1.
+			//$("myBtn").text(0);	
+			
+			});
+			//countClicks = 1;
+		  });
+</script>
+<style>
+html {
+   margin: 0px;
+   height: 100%;
+   width: 100%;
+   background-color: #f2fbaa;
+}
+
+body {
+   margin: 10px;
+   min-height: 100%;
+   width: 100%;
+}</style>
+</head>
+<a href="../home.html">Home</a><br />
+<img src="images/logo.jpg" /><br />
+<h1>IT 411 Project 4 Homepage</h1>
+
+<h1>This is Sftwear Consulting!!</h1>
+<hr /> 
+
+<body>
+
+<div id="container">
+	<form>
+<button id="myBtn">Clear List</button>
+<p id="output"></p>
+<p id="receiver"></p>
+<p id="message1"></p>
+<p id="message2"></p>
+</form>
+</div>
+
+</body>
+</html>
